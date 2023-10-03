@@ -42,16 +42,7 @@ function setUpWorld()
     sky = new InitSky();
     sky.addToScene(scene);    
     floor = new InitFloor();
-    floor.addToScene(scene);
-    for (let i = 0; i < 2; ++i) {
-        const controller = renderer.xr.getController(i);
-        var controllerMesh = new THREE.Mesh( geometry, material );
-        controllerMesh.scale.set(.01,.1,.1);
-        controllerMesh.castShadow = true;
-        controller.add( controllerMesh);
-        scene.add(controller);
-        controllers.push(controller);
-    }   
+    floor.addToScene(scene); 
 }
 
 
@@ -73,6 +64,7 @@ function setup()
     //renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
     document.body.appendChild(renderer.domElement);
+    setUpWorld();
 }
 
 /* rendering */
