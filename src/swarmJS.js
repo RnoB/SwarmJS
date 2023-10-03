@@ -65,6 +65,7 @@ function setup()
 
     document.body.appendChild(renderer.domElement);
     setUpWorld();
+    camera.position.set(0,0,2);
 }
 
 /* rendering */
