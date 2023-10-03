@@ -1,2 +1,1 @@
-import * as THREE from 'three.min';
-console.log("Setting up World")
+import * as THREE from"./js/three.min.js";
