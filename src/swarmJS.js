@@ -8,6 +8,12 @@ var scene;
 var camera;
 var renderer = null;
 
+var geometry = new THREE.BoxGeometry();
+
+//var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+var material = new THREE.MeshStandardMaterial();
+var cameraBox = new THREE.Mesh(geometry, material);
+
 function setup()
 {
     scene = new THREE.Scene();
