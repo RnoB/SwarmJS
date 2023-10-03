@@ -23,6 +23,7 @@ var Sky = function () {
 	var shader = Sky.SkyShader;
 
 	var material = new THREE.ShaderMaterial( {
+		name: 'SkyShader',
 		fragmentShader: shader.fragmentShader,
 		vertexShader: shader.vertexShader,
 		uniforms: THREE.UniformsUtils.clone( shader.uniforms ),
@@ -30,11 +31,12 @@ var Sky = function () {
 		depthWrite: false
 	} );
 
-	THREE.Mesh.call( this, new THREE.BoxBufferGeometry( 1, 1, 1 ), material );
+	super( new BoxGeometry( 1, 1, 1 ), material );
+	this.isSky = true;
 
 };
 
-Sky.prototype = Object.create( THREE.Mesh.prototype );
+//Sky.prototype = Object.create( THREE.Mesh.prototype );
 
 Sky.SkyShader = {
 
