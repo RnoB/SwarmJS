@@ -15,26 +15,39 @@
 */
 
 
+import {
+	BackSide,
+	BoxGeometry,
+	Mesh,
+	ShaderMaterial,
+	UniformsUtils,
+	Vector3
+} from 'three';
 
-import * as THREE from 'three';
 
-var Sky = function () {
 
-	var shader = Sky.SkyShader;
+class Sky extends Mesh {
 
-	var material = new THREE.ShaderMaterial( {
-		name: 'SkyShader',
-		fragmentShader: shader.fragmentShader,
-		vertexShader: shader.vertexShader,
-		uniforms: THREE.UniformsUtils.clone( shader.uniforms ),
-		side: THREE.BackSide,
-		depthWrite: false
-	} );
+	constructor() {
 
-	super( new BoxGeometry( 1, 1, 1 ), material );
-	this.isSky = true;
+		const shader = Sky.SkyShader;
 
-};
+		const material = new ShaderMaterial( {
+			name: 'SkyShader',
+			fragmentShader: shader.fragmentShader,
+			vertexShader: shader.vertexShader,
+			uniforms: UniformsUtils.clone( shader.uniforms ),
+			side: BackSide,
+			depthWrite: false
+		} );
+
+		super( new BoxGeometry( 1, 1, 1 ), material );
+
+		this.isSky = true;
+
+	}
+
+}
 
 //Sky.prototype = Object.create( THREE.Mesh.prototype );
 
