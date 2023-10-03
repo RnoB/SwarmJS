@@ -19,7 +19,7 @@ import * as THREE from 'three';
 
 
 
-class Sky extends Mesh {
+class Sky extends THREE.Mesh {
 
 	constructor() {
 
