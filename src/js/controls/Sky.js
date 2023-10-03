@@ -15,14 +15,7 @@
 */
 
 
-import {
-	BackSide,
-	BoxGeometry,
-	Mesh,
-	ShaderMaterial,
-	UniformsUtils,
-	Vector3
-} from 'three';
+import * as THREE from 'three';
 
 
 
@@ -32,16 +25,16 @@ class Sky extends Mesh {
 
 		const shader = Sky.SkyShader;
 
-		const material = new ShaderMaterial( {
+		const material = new THREE.ShaderMaterial( {
 			name: 'SkyShader',
 			fragmentShader: shader.fragmentShader,
 			vertexShader: shader.vertexShader,
-			uniforms: UniformsUtils.clone( shader.uniforms ),
-			side: BackSide,
+			uniforms: THREE.UniformsUtils.clone( shader.uniforms ),
+			side: THREE.BackSide,
 			depthWrite: false
 		} );
 
-		super( new BoxGeometry( 1, 1, 1 ), material );
+		super( new THREE.BoxGeometry( 1, 1, 1 ), material );
 
 		this.isSky = true;
 
