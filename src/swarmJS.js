@@ -1,1 +1,1 @@
-import * as THREE from"./js/three.min.js";
+import * as THREE from "three.min";
