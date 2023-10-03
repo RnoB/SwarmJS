@@ -1,1 +1,1 @@
-import * as THREE from "three.min";
+import * as THREE from 'three';
