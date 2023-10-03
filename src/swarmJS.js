@@ -60,7 +60,7 @@ function setUpWorld()
 function setup()
 {
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x000000);
+    scene.background = new THREE.Color(0xff00aa);
 
     camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.01, 10000);
     
