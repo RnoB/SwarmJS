@@ -1,4 +1,4 @@
-import { Sky } from 'three/addons/jsm/objects/Sky.js';
+import { Sky } from 'three/addons/objects/Sky.js';
 
 
 
